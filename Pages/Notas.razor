@@ -1,0 +1,26 @@
+﻿@* @page "/notas"
+@inject NotasApp.Services.NotaService NotaService
+
+<h3>Aplicacion de Notas</h3>
+
+<imput type="text" @bind="titulo" placeholder="Titulo" />
+<textarea @bind="contenido" placeholder="contenido"></textarea>
+<button @onclick="AgregarNota">Agregar Notas</button>
+
+<h4>Notas</h4>
+
+
+<ul>
+    @foreach (var nota in NotaService.ObtenerNotas())
+    {
+        <li>
+            <stroung>@nota.Titulo</stroung>:@nota.Contenido
+            <button @onclick="() => EditarNota(nota">Editar</button>
+            <button @onclick=" ()=> EliminarNota(nota.Id)">Eliminar</button>
+        </li>
+    }
+</ul>
+
+@code{
+    private
+} *@
